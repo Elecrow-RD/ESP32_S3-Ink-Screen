@@ -1,4 +1,4 @@
-#include <Arduino.h>         // Include Arduino core library for basic Arduino functions
+// #include <Arduino.h>         // Include Arduino core library for basic Arduino functions
 #include "EPD.h"             // Include library for controlling Electronic Paper Display (EPD)
 #include "Pic.h"        // Include header file containing picture data
 
@@ -22,9 +22,9 @@ void setup() {
     EPD_PartUpdate();          // Perform a partial update on the EPD.
     EPD_Sleep();               // Put the EPD to sleep mode.
 
-    delay(5000);               // Wait for 5000 milliseconds (5 seconds).
+    // delay(5000);               // Wait for 5000 milliseconds (5 seconds).
 
-    clear_all();               // Call the clear_all function to clear the screen.
+    // clear_all();               // Call the clear_all function to clear the screen.
 }
 
 // The main loop function. Currently, it does not perform any operations.

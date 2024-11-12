@@ -8,7 +8,7 @@
 extern uint8_t ImageBW[ALLSCREEN_BYTES];
 
 char *My_content_1 = "Name: Rob Oudendijk";
-
+char *My_content_2 = "Email: rob@yr-design.biz";
 // Function to set up the system. Executed once when the program starts.
 void setup() {
     // Configure pin 7 for screen power control.
@@ -21,7 +21,8 @@ void setup() {
     EPD_Clear_R26H();          // Clear the EPD using a specific method.
 
     // Display a picture on the EPD.
-    Long_Text_Display(0, 0, My_content_1, 24, BLACK);
+    Long_Text_Display(0, 0, My_content_1, 16, BLACK);
+    Long_Text_Display(0, 17, My_content_2, 16, BLACK);
     EPD_DisplayImage(ImageBW); // Display the image stored in ImageBW array.
     EPD_PartUpdate();          // Perform a partial update on the EPD.
     EPD_Sleep();               // Put the EPD to sleep mode.

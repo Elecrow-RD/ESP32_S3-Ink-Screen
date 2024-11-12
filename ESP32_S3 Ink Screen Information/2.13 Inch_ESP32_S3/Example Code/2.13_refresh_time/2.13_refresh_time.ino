@@ -13,8 +13,8 @@
 // This array is likely used to hold pixel data for the display.
 extern uint8_t ImageBW[ALLSCREEN_BYTES];
 
-const char* ssid = "yanfa_software";        // WiFi SSID
-const char* password = "yanfa-123456";      // WiFi password
+const char* ssid = "kittywood-5G";        // WiFi SSID
+const char* password = "schatjeyuka";      // WiFi password
 
 unsigned long lastUpdateTime = 0;  // The timestamp of the last update time
 unsigned long lastAnalysisTime = 0;  // Last analysis timestamp
