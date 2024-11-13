@@ -185,20 +185,3 @@ If you have any questions or suggestions, feel free to reach out:
 ## **Where to Buy**
 
 You can purchase the [CrowPanel ESP32 E-paper HMI Display](https://www.elecrow.com/crowpanel-esp32-2-13-e-paper-hmi-display-with-122-250-resolution-black-white-color-driven-by-spi-interface.html?srsltid=AfmBOorFAVknIuU0zAzCok_W3I7MrcxQjEt1l9C7vXLtkImsX2zo0K8A) from Elecrow using the link provided above. This display is essential for setting up the project and ensuring compatibility with the ESP32-S3 microcontroller.
-
-\#\#\# Changes Made:
-
-1\. \*\*Added a "Where to Buy" Section\*\*:  
-   \- This section provides a clear and dedicated place for users to find and purchase the CrowPanel ESP32 2.13" E-paper HMI Display.  
-     
-2\. \*\*Enhanced Link Visibility\*\*:  
-   \- Ensured that the specific Elecrow link is included both in the \*\*Features\*\* and \*\*Prerequisites\*\* sections.  
-   \- Added descriptive text around the link to make its purpose clear.
-
-3\. \*\*Consistent Naming\*\*:  
-   \- Used the exact product name "CrowPanel ESP32 2.13" E-paper HMI Display" consistently to avoid confusion.
-
-4\. \*\*Formatting for Clarity\*\*:  
-   \- Maintained clear markdown formatting to ensure that links are clickable and easily accessible.
-
-Feel free to adjust any sections further to better fit your project's needs\!  
