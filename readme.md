@@ -215,14 +215,11 @@ This project is licensed under the MIT License.
 
 If you have any questions or suggestions, feel free to reach out:
 
-- **Author**: Rob Ouden
-- **Email**: robouden@example.com
+- **Author**: Rob Oudendijk
+- **Email**: rob@yr-design.biz
 - **GitHub**: [robouden](https://github.com/robouden)
 
 ## Where to Buy
 
 You can purchase the [CrowPanel ESP32 2.13" E-paper HMI Display](https://www.elecrow.com/crowpanel-esp32-2-13-e-paper-hmi-display-with-122-250-resolution-black-white-color-driven-by-spi-interface.html?srsltid=AfmBOorFAVknIuU0zAzCok_W3I7MrcxQjEt1l9C7vXLtkImsX2zo0K8A) from Elecrow using the link provided above. This display is essential for setting up the project and ensuring compatibility with the ESP32-S3 microcontroller.
 
-```
-
-```
