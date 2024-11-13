@@ -1,4 +1,3 @@
-````markdown
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-ESP32_S3-brightgreen.svg)
 ![Framework](https://img.shields.io/badge/framework-PlatformIO-blue.svg)
@@ -52,8 +51,6 @@ Follow these steps to set up the project on your local machine:
 
    ```bash
    git clone https://github.com/robouden/ESP32_S3-Ink-Screen.git
-   ```
-````
 
 2. **Navigate to the Project Directory**
 
