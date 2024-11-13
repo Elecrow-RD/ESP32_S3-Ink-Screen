@@ -1,3 +1,4 @@
+````markdown
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-ESP32_S3-brightgreen.svg)
 ![Framework](https://img.shields.io/badge/framework-PlatformIO-blue.svg)
@@ -57,6 +58,7 @@ Follow these steps to set up the project on your local machine:
    ```bash
    cd ESP32_S3-Ink-Screen
    ```
+<<<<<<< HEAD
 
 3. **Open the Project in VSCode**
 
@@ -74,6 +76,32 @@ Follow these steps to set up the project on your local machine:
 
 5. **Build and Upload the Firmware**
 
+=======
+````
+
+2. **Navigate to the Project Directory**
+
+   ```bash
+   cd ESP32_S3-Ink-Screen
+   ```
+
+3. **Open the Project in VSCode**
+
+   Launch Visual Studio Code and open the cloned repository folder:
+
+   - Click on `File` > `Open Folder...`
+   - Select the `ESP32_S3-Ink-Screen` folder.
+
+4. **Install PlatformIO Extension**
+
+   If you haven't installed PlatformIO yet:CrowPanel ESP32 2.13” E-paper HMI Display 
+
+   - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VSCode or press `Ctrl+Shift+X`.
+   - Search for `PlatformIO IDE` and click `Install`.
+
+5. **Build and Upload the Firmware**
+
+>>>>>>> c501214 (Modified screen for business card)
    - Open the PlatformIO sidebar by clicking on the alien icon in the Activity Bar.
    - Click on `Build` (checkmark icon) to compile the project.
    - Once the build is successful, connect your ESP32-S3 board via USB.
