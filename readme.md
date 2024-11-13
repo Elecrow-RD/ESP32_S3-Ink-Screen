@@ -218,8 +218,11 @@ If you have any questions or suggestions, feel free to reach out:
 - **Author**: Rob Oudendijk
 - **Email**: [rob@yr-design.biz](mailto:rob@yr-design.biz)
 - **GitHub**: [robouden](https://github.com/robouden)
+  
+![IMG_20241113_223312](https://github.com/user-attachments/assets/0a381edf-e7c7-4d3d-8596-d396a0e435ea)
 
 ## Where to Buy
 
 You can purchase the [CrowPanel ESP32 2.13" E-paper HMI Display](https://www.elecrow.com/crowpanel-esp32-2-13-e-paper-hmi-display-with-122-250-resolution-black-white-color-driven-by-spi-interface.html?srsltid=AfmBOorFAVknIuU0zAzCok_W3I7MrcxQjEt1l9C7vXLtkImsX2zo0K8A) from Elecrow using the link provided above. This display is essential for setting up the project and ensuring compatibility with the ESP32-S3 microcontroller.
+
 
