@@ -216,7 +216,7 @@ This project is licensed under the MIT License.
 If you have any questions or suggestions, feel free to reach out:
 
 - **Author**: Rob Oudendijk
-- **Email**: rob@yr-design.biz
+- **Email**: [rob@yr-design.biz](mailto:rob@yr-design.biz)
 - **GitHub**: [robouden](https://github.com/robouden)
 
 ## Where to Buy
