@@ -7,7 +7,12 @@ extern uint8_t ImageBW[ALLSCREEN_BYTES];
 
 // Function to set up the system. Executed once when the program starts.
 void setup() {
+    Serial.begin(115200); // Initialize serial communication at a baud rate of 115200.
+    Serial.println("Setup start.");
+
+    
     // Configure pin 7 for screen power control.
+
     pinMode(7, OUTPUT);        // Set pin 7 as output.
     digitalWrite(7, HIGH);     // Activate screen power by setting pin 7 high.
 
@@ -24,7 +29,7 @@ void setup() {
 
     // delay(5000);               // Wait for 5000 milliseconds (5 seconds).
 
-    // clear_all();               // Call the clear_all function to clear the screen.
+    clear_all();               // Call the clear_all function to clear the screen.
 }
 
 // The main loop function. Currently, it does not perform any operations.
@@ -34,9 +39,11 @@ void loop() {
 
 // Function to clear all content on the EPD.
 void clear_all() {
-    EPD_Init();                // Initialize the EPD.
-    EPD_ALL_Fill(WHITE);       // Fill the entire EPD with white color.
-    EPD_Update();              // Update the EPD display.
-    EPD_Clear_R26H();          // Clear the EPD using a specific method.
+    // EPD_Init();                // Initialize the EPD.
+    // EPD_ALL_Fill(WHITE);       // Fill the entire EPD with white color.
+    // EPD_Update();              // Update the EPD display.
+    // EPD_Clear_R26H();          // Clear the EPD using a specific method.
     EPD_Sleep();               // Put the EPD to sleep mode.
+    Serial.println("Go to sleep");
+    esp_deep_sleep_start();
 }
