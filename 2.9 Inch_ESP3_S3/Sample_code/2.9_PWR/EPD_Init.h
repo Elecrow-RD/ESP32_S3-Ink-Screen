@@ -6,12 +6,12 @@
 /* 定义墨水屏显示方向 */
 #define USE_HORIZONTIAL 2 /* 0 1 2 3 */
 #if USE_HORIZONTIAL == 0 | USE_HORIZONTIAL == 2
-#define EPD_W 250
-#define EPD_H 122
+#define EPD_W 296
+#define EPD_H 128
 #define ALLSCREEN_BYTES ((EPD_H % 8) ? (EPD_H / 8 + 1) : (EPD_H / 8)) * EPD_W
 #else
-#define EPD_W 122
-#define EPD_H 250
+#define EPD_W 128
+#define EPD_H 296
 #define ALLSCREEN_BYTES ((EPD_W % 8) ? (EPD_W / 8 + 1) : (EPD_W / 8)) * EPD_H
 #endif
 /* 定义颜色参数 */

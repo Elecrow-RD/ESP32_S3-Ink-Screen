@@ -11,9 +11,9 @@ void EPD_GPIOInit(void)
 }
 
 /**
- * @brief       IOģ��SPI����һ���ֽ�����
- * @param       dat: ��Ҫ���͵��ֽ�����
- * @retval      ��
+ * @brief       IO模拟SPI发送一个字节数据
+ * @param       dat: 需要发送的字节数据
+ * @retval      无
  */
 void EPD_WR_Bus(uint8_t dat)
 {
@@ -37,9 +37,9 @@ void EPD_WR_Bus(uint8_t dat)
 }
 
 /**
- * @brief       ��Һ��д�Ĵ�������
- * @param       reg: Ҫд������
- * @retval      ��
+ * @brief       向液晶写寄存器命令
+ * @param       reg: 要写的命令
+ * @retval      无
  */
 void EPD_WR_REG(uint8_t reg)
 {
@@ -49,9 +49,9 @@ void EPD_WR_REG(uint8_t reg)
 }
 
 /**
- * @brief       ��Һ��дһ���ֽ�����
- * @param       dat: Ҫд������
- * @retval      ��
+ * @brief       向液晶写一个字节数据
+ * @param       dat: 要写的数据
+ * @retval      无
  */
 void EPD_WR_DATA8(uint8_t dat)
 {
