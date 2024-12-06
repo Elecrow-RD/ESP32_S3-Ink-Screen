@@ -67,24 +67,29 @@ void count_btn(int NUM[5])
 }
 
 void setup() {
-  Serial.begin(115200);
-  // Screen power
-  pinMode(7, OUTPUT);
-  digitalWrite(7, HIGH);
+    Serial.begin(115200); // Initialize serial communication at a baud rate of 115200.
+    Serial.println("Setup start.");
 
-  pinMode(HOME_KEY, INPUT);
-  pinMode(EXIT_KEY, INPUT);
-  pinMode(PRV_KEY, INPUT);
-  pinMode(NEXT_KEY, INPUT);
-  pinMode(OK_KEY, INPUT);
+    
+    // Configure pin 7 for screen power control.
 
-  // Initialize the e-ink display
-  // EPD_Init();
-  // EPD_Clear(0, 0, 250, 122, WHITE);
-  // EPD_ALL_Fill(WHITE);
-  // EPD_Update();
-  // EPD_Clear_R26H();
-  clear_all;
+    pinMode(7, OUTPUT);        // Set pin 7 as output.
+    digitalWrite(7, HIGH);     // Activate screen power by setting pin 7 high.
+
+    EPD_Init();                // Initialize the EPD.
+    EPD_ALL_Fill(WHITE);       // Fill the entire EPD with white color.
+    EPD_Update();              // Update the EPD display.
+    EPD_Clear_R26H();          // Clear the EPD using a specific method.
+
+    // Display a picture on the EPD.
+    // EPD_ShowPicture(0, 0, 248, 122, gImage_black_ground, BLACK);
+    EPD_DisplayImage(ImageBW); // Display the image stored in ImageBW array.
+    EPD_PartUpdate();          // Perform a partial update on the EPD.
+    EPD_Sleep();               // Put the EPD to sleep mode.
+
+    // delay(5000);               // Wait for 5000 milliseconds (5 seconds).
+
+    clear_all();               // Call the clear_all function to clear the screen.
 }
 
 void loop() {

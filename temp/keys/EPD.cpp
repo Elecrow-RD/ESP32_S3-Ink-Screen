@@ -54,6 +54,28 @@ void EPD_DrawPoint(uint16_t x, uint16_t y, uint8_t color)
 }
 
 /**
+ * @brief       填充缓存函数
+ * @param       xs:填充位置的起始列坐标
+ * @param       ys:填充位置的起始行坐标
+ * @param       xe:填充位置的结束列坐标
+ * @param       ye:填充位置的结束行坐标
+ * @param       color:填充位置的颜色值
+ * @retval      无
+ */
+void EPD_Clear(uint16_t xs, uint16_t ys, uint16_t xe, uint16_t ye, uint8_t color)
+{
+    uint16_t x, y;
+    uint32_t Addr;
+    for (y = ys; y < ye; y++)
+    {
+        for (x = xs; x < xe; x++)
+        {
+            EPD_DrawPoint(x, y, color);
+        }
+    }
+}
+
+/**
  * @brief       两点之间画线函数
  * @param       xs:画线的起始列坐标
  * @param       ys:画线的起始行坐标
@@ -384,6 +406,300 @@ void EPD_ShowFloatNum(uint16_t x, uint16_t y, float num, uint8_t pre, uint8_t le
     }
 }
 
+///**
+// * @brief       显示12x12汉字
+// * @param       x:汉字显示位置列起始坐标
+// * @param       y:汉字显示位置行起始坐标
+// * @param       *s:显示中文字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowChinese12x12(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint8_t i, j;
+//    uint16_t k, HZnum;    // 汉字数目
+//    uint16_t TypefaceNum; // 一个字符所占字节大小
+//    uint16_t x0 = x;
+//    TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
+//    HZnum = sizeof(tfont12) / sizeof(typFONT_GB12); // 统计汉字数目
+//    for (k = 0; k < HZnum; k++)
+//    {
+//        if ((tfont12[k].Index[0] == *(s)) && (tfont12[k].Index[1] == *(s + 1)))
+//        {
+//            for (i = 0; i < TypefaceNum; i++)
+//            {
+//                for (j = 0; j < 8; j++)
+//                {
+//                    if (tfont12[k].Msk[i] & (0x01 << j))
+//                    {
+//                        EPD_DrawPoint(x, y, color); // 画一个点
+//                    }
+//                    else
+//                    {
+//                        EPD_DrawPoint(x, y, !color);
+//                    }
+//                    x++;
+//                    if ((x - x0) == sizey)
+//                    {
+//                        x = x0;
+//                        y++;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
+//    }
+//}
+//
+///**
+// * @brief       显示16x16汉字
+// * @param       x:汉字显示位置列起始坐标
+// * @param       y:汉字显示位置行起始坐标
+// * @param       *s:显示中文字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowChinese16x16(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint8_t i, j;
+//    uint16_t k, HZnum;    // 汉字数目
+//    uint16_t TypefaceNum; // 一个字符所占字节大小
+//    uint16_t x0 = x;
+//    TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
+//    HZnum = sizeof(tfont16) / sizeof(typFONT_GB16); // 统计汉字数目
+//    for (k = 0; k < HZnum; k++)
+//    {
+//        if ((tfont16[k].Index[0] == *(s)) && (tfont16[k].Index[1] == *(s + 1)))
+//        {
+//            for (i = 0; i < TypefaceNum; i++)
+//            {
+//                for (j = 0; j < 8; j++)
+//                {
+//                    if (tfont16[k].Msk[i] & (0x01 << j))
+//                    {
+//                        EPD_DrawPoint(x, y, color); // 画一个点
+//                    }
+//                    else
+//                    {
+//                        EPD_DrawPoint(x, y, !color);
+//                    }
+//                    x++;
+//                    if ((x - x0) == sizey)
+//                    {
+//                        x = x0;
+//                        y++;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
+//    }
+//}
+//
+///**
+// * @brief       显示24x24汉字
+// * @param       x:汉字显示位置列起始坐标
+// * @param       y:汉字显示位置行起始坐标
+// * @param       *s:显示中文字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowChinese24x24(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint8_t i, j;
+//    uint16_t k, HZnum;    // 汉字数目
+//    uint16_t TypefaceNum; // 一个字符所占字节大小
+//    uint16_t x0 = x;
+//    TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
+//    HZnum = sizeof(tfont24) / sizeof(typFONT_GB24); // 统计汉字数目
+//    for (k = 0; k < HZnum; k++)
+//    {
+//        if ((tfont24[k].Index[0] == *(s)) && (tfont24[k].Index[1] == *(s + 1)))
+//        {
+//            for (i = 0; i < TypefaceNum; i++)
+//            {
+//                for (j = 0; j < 8; j++)
+//                {
+//                    if (tfont24[k].Msk[i] & (0x01 << j))
+//                    {
+//                        EPD_DrawPoint(x, y, color); // 画一个点
+//                    }
+//                    else
+//                    {
+//                        EPD_DrawPoint(x, y, !color);
+//                    }
+//                    x++;
+//                    if ((x - x0) == sizey)
+//                    {
+//                        x = x0;
+//                        y++;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
+//    }
+//}
+//
+///**
+// * @brief       显示32x32汉字
+// * @param       x:汉字显示位置列起始坐标
+// * @param       y:汉字显示位置行起始坐标
+// * @param       *s:显示中文字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowChinese32x32(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint8_t i, j;
+//    uint16_t k, HZnum;    // 汉字数目
+//    uint16_t TypefaceNum; // 一个字符所占字节大小
+//    uint16_t x0 = x;
+//    TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
+//    HZnum = sizeof(tfont32) / sizeof(typFONT_GB32); // 统计汉字数目
+//    for (k = 0; k < HZnum; k++)
+//    {
+//        if ((tfont32[k].Index[0] == *(s)) && (tfont32[k].Index[1] == *(s + 1)))
+//        {
+//            for (i = 0; i < TypefaceNum; i++)
+//            {
+//                for (j = 0; j < 8; j++)
+//                {
+//
+//                    if (tfont32[k].Msk[i] & (0x01 << j))
+//                    {
+//                        EPD_DrawPoint(x, y, color); // 画一个点
+//                    }
+//                    else
+//                    {
+//                        EPD_DrawPoint(x, y, !color);
+//                    }
+//                    x++;
+//                    if ((x - x0) == sizey)
+//                    {
+//                        x = x0;
+//                        y++;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
+//    }
+//}
+//
+///**
+// * @brief       显示汉字串
+// * @param       x:汉字显示位置列起始坐标
+// * @param       y:汉字显示位置行起始坐标
+// * @param       *s:显示中文字符
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowChinese(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    while (*s != 0)
+//    {
+//        if (sizey == 12)
+//            EPD_ShowChinese12x12(x, y, s, color, sizey);
+//        else if (sizey == 16)
+//            EPD_ShowChinese16x16(x, y, s, color, sizey);
+//        else if (sizey == 24)
+//            EPD_ShowChinese24x24(x, y, s, color, sizey);
+//        else if (sizey == 32)
+//            EPD_ShowChinese32x32(x, y, s, color, sizey);
+//        else
+//            return;
+//        s += 2;
+//        x += sizey;
+//    }
+//}
+//
+///**
+// * @brief       中英字符混显
+// * @param       x:显示位置列起始坐标
+// * @param       y:显示位置行起始坐标
+// * @param       *s:显示字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_ShowStr(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint16_t x0 = x;
+//    uint8_t bHz = 0; // 字符或者中文
+//    while (*s != 0)  // 数据未结束
+//    {
+//        if (!bHz) // 英文
+//        {
+//            if (x > (EPD_W - sizey / 2) || y > (EPD_H - sizey))
+//            {
+//                return;
+//            }
+//            if (*s > 0x80)
+//            {
+//                bHz = 1; // 中文
+//            }
+//            else // 字符
+//            {
+//                if (*s == 0x0D) // 换行符号
+//                {
+//                    y += sizey;
+//                    x = x0;
+//                    s++;
+//                }
+//                else
+//                {
+//                    EPD_ShowChar(x, y, *s, color, sizey);
+//                    x += sizey / 2; // 字符,为全字的一半
+//                }
+//                s++;
+//            }
+//        }
+//        else // 中文
+//        {
+//            if (x > (EPD_W - sizey) || y > (EPD_H - sizey))
+//            {
+//                return;
+//            }
+//            bHz = 0;
+//            if (sizey == 12)
+//                EPD_ShowChinese12x12(x, y, s, color, sizey);
+//            else if (sizey == 16)
+//                EPD_ShowChinese16x16(x, y, s, color, sizey);
+//            else if (sizey == 24)
+//                EPD_ShowChinese24x24(x, y, s, color, sizey);
+//            else
+//                EPD_ShowChinese32x32(x, y, s, color, sizey);
+//            s += 2;
+//            x += sizey;
+//        }
+//    }
+//}
+
+///**
+// * @brief       字符居中显示
+// * @param       x:此输入参数无效
+// * @param       y:显示位置行起始坐标
+// * @param       *s:显示字符起始地址
+// * @param       color:字符颜色
+// * @param       sizey:字符大小
+// * @retval      无
+// */
+//void EPD_StrCenter(uint16_t x, uint16_t y, const char *s, uint8_t color, uint8_t sizey)
+//{
+//    uint16_t len = strlen((const char *)s);
+//    uint16_t x1 = (EPD_W - len * 8) / 2;
+//    EPD_ShowStr(x1, y, s, color, sizey);
+//}
 
 /**
  * @brief       图片显示函数

@@ -6,12 +6,20 @@
 //项目板子
 #define SCK 12
 #define MOSI 11
-#define RES 10
-#define DC 13
-#define CS 14
-#define BUSY 9
+#define RES 47
+#define DC 46
+#define CS 45
+#define BUSY 48
 
-/* 定义端口电平状态 */
+//#define SCK 12
+//#define MOSI 11
+//#define RES 21
+//#define DC 9
+//#define CS 10
+//#define BUSY 48
+
+
+/* ����˿ڵ�ƽ״̬ */
 #define EPD_SCK_Clr() digitalWrite(SCK, LOW)
 #define EPD_SCK_Set() digitalWrite(SCK, HIGH)
 
@@ -29,7 +37,7 @@
 
 #define EPD_ReadBUSY digitalRead(BUSY)
 
-/* 函数声明 */
+/* �������� */
 void EPD_GPIOInit(void);
 void EPD_WR_Bus(uint8_t dat);
 void EPD_WR_REG(uint8_t reg);
