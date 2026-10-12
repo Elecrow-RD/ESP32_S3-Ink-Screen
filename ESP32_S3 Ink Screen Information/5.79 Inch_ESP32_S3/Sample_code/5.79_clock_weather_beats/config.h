@@ -2,8 +2,8 @@
 #define _CONFIG_H_
 
 // ---- WiFi ----
-#define WIFI_SSID     "your-wifi-name"
-#define WIFI_PASSWORD "your-wifi-password"
+#define WIFI_SSID     "Quantum"
+#define WIFI_PASSWORD "@YcdALDg7ctvBdGj"
 
 // ---- Location (weather comes from Open-Meteo: free, no API key) ----
 #define LATITUDE   39.1732    // Germantown, MD
